@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cosmetest - Contactez-nous</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">Cosmetest</a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="comment_ca_marche.html">Comment ça marche</a></li>
+            <li><a href="nos_tests.html">Nos Tests</a></li>
+            <li><a href="a_propos.html">À Propos</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="inscription.html">Inscription</a></li>
+            <li><a href="connexion.html">Connexion</a></li>
+          </ul>
+        </nav>
+        <button class="burger-menu" aria-label="Menu">Menu</button>
+      </div>
+    </header>
+
+    <main class="contact-page-content">
+      <section class="hero-subpage">
+        <div class="container">
+          <h1>Contactez-nous : Nous Sommes Là Pour Vous</h1>
+          <p>
+            Que vous ayez une question, une suggestion ou une demande de
+            partenariat, nous sommes à votre écoute.
+          </p>
+        </div>
+      </section>
+
+      <section class="contact-form-section section-spacing">
+        <div class="container content-two-columns">
+          <div class="column-text">
+            <h2>Envoyez-nous un Message</h2>
+            <p>
+              Utilisez le formulaire ci-dessous pour nous contacter directement.
+              Nous nous efforçons de répondre à toutes les demandes dans les
+              plus brefs délais.
+            </p>
+            <form class="contact-form">
+              <div class="form-group">
+                <label for="name">Votre Nom Complet</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Votre Adresse Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="subject">Sujet de Votre Message</label>
+                <input type="text" id="subject" name="subject" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Votre Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Envoyer le Message
+              </button>
+            </form>
+          </div>
+          <div class="column-info">
+            <h2>Nos Coordonnées</h2>
+            <div class="contact-info-item">
+              <h3>Email</h3>
+              <p>
+                <a href="mailto:contact@cosmetest.com">contact@cosmetest.com</a>
+              </p>
+            </div>
+            <div class="contact-info-item">
+              <h3>Téléphone</h3>
+              <p><a href="tel:+33123456789">+33 01 81 70 19 00</a></p>
+            </div>
+            <div class="contact-info-item">
+              <h3>Adresse</h3>
+              <p>
+                Cosmetest SARL<br />23 rue de Palestro<br />75002 Paris, France
+              </p>
+            </div>
+            <div class="contact-info-item">
+              <h3>Horaires</h3>
+              <p>Du lundi au vendredi de 9h00 à 13h00 et de 14h00 à 18h00</p>
+            </div>
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.636650276116!2d2.349028776047778!3d48.86591380017754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1a061fdafb%3A0xdb7d445c944cf995!2s23%20Rue%20de%20Palestro%2C%2075002%20Paris!5e1!3m2!1sfr!2sfr!4v1750107884058!5m2!1sfr!2sfr"
+                width="100%"
+                height="300"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-promo section-spacing bg-secondary-light text-center">
+        <div class="container">
+          <h2>Vous avez une Question Fréquente ?</h2>
+          <p class="cta-subtitle">
+            Consultez notre FAQ avant de nous contacter, la réponse s'y trouve
+            peut-être déjà !
+          </p>
+          <a href="#" class="btn btn-secondary">Consulter la FAQ</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>Cosmetest</h4>
+            <ul>
+              <li><a href="a_propos.html">À Propos</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Informations Légales</h4>
+            <ul>
+              <li><a href="#">Conditions Générales</a></li>
+              <li><a href="#">Politique de Confidentialité</a></li>
+              <li><a href="#">Mentions Légales</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="contact.html">Nous Contacter</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Suivez-nous</h4>
+            <div class="social-icons">
+              <a
+                href="https://www.instagram.com/cosmetest.75/"
+                aria-label="Instagram"
+                >Instagram</a
+              >
+              <a
+                href="https://www.tiktok.com/@cosmetest.paris"
+                aria-label="Tiktok"
+                >Tiktok</a
+              >
+            </div>
+            <p>Abonnez-vous à notre newsletter :</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Votre adresse email" />
+              <button type="submit">S'abonner</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Cosmetest. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document
+        .querySelector(".burger-menu")
+        .addEventListener("click", function () {
+          document.querySelector(".main-nav ul").classList.toggle("active");
+        });
+    </script>
+  </body>
+</html>

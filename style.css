@@ -1,0 +1,1712 @@
+/* VARIABLES CSS pour les couleurs (Nouvelle palette sans orange) */
+:root {
+  --color-primary: rgb(20, 81, 80); /* Vert Canard Profond */
+  --color-secondary-bg: rgb(200, 230, 225); /* Vert d'Eau Léger pour fonds */
+  --color-accent: rgb(
+    90,
+    150,
+    145
+  ); /* NOUVEL ACCENT : Vert moyen, de la même famille */
+  --color-text-dark: rgb(45, 45, 45); /* Gris Anthracite pour titres */
+  --color-text-light: rgb(
+    100,
+    100,
+    100
+  ); /* Gris Clair Doux pour texte courant */
+  --color-white: rgb(255, 255, 255);
+  --color-off-white: rgb(248, 248, 248); /* Blanc cassé très léger */
+  --color-border: rgb(220, 220, 220); /* Bordures subtiles */
+}
+
+/* Styles Généraux */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  background-color: var(--color-off-white); /* Fond général plus doux */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  color: var(--color-text-dark);
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--color-primary);
+  margin: 20px auto 0;
+  border-radius: 2px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-accent); /* Liens au survol avec le nouvel accent vert */
+  opacity: 0.9;
+}
+
+/* Boutons */
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.95em;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(
+    --color-accent
+  ); /* Survol du bouton principal avec le nouvel accent vert */
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* SECTION : EN-TÊTE (HEADER) */
+.main-header {
+  background-color: var(--color-white);
+  padding: 20px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.logo a {
+  color: var(--color-primary);
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.main-nav ul li {
+  margin-left: 40px;
+}
+
+.main-nav ul li a {
+  color: var(--color-text-dark);
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.main-nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background-color: var(
+    --color-accent
+  ); /* Soulignement du menu en accent vert */
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.btn.btn-secondary,
+.btn.btn-primary {
+  margin-left: 20px;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  margin-left: 20px;
+  color: var(--color-text-dark);
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: var(--color-off-white);
+}
+
+.burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.1em;
+  cursor: pointer;
+  color: var(--color-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: 1px solid var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.burger-menu:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* SECTION : HÉRO */
+.hero-section {
+  background-image: url("https://via.placeholder.com/1500x600/145150/C8E6E1?text=Votre+Beaute+Testee");
+  background-size: cover;
+  background-position: center;
+  color: var(--color-white);
+  text-align: center;
+  padding: 120px 25px;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(20, 81, 80, 0.6);
+  z-index: 0;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section h1 {
+  font-size: 4em;
+  margin-bottom: 25px;
+  color: var(--color-white);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.hero-section p {
+  font-size: 1.5em;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+/* SECTION : COMMENT ÇA MARCHE */
+.how-it-works {
+  padding: 100px 0;
+  background-color: var(--color-off-white);
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  text-align: center;
+}
+
+.step-item {
+  background-color: var(--color-white);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid var(--color-border);
+}
+
+.step-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.icon-placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border: 3px solid var(--color-primary);
+  border-radius: 50%;
+  background-color: var(--color-secondary-bg);
+}
+
+.step-item h3 {
+  font-size: 1.7em;
+  margin-bottom: 15px;
+  color: var(--color-text-dark);
+}
+
+.step-item p {
+  font-size: 1.05em;
+  line-height: 1.8;
+}
+
+/* SECTION : CATÉGORIES DE PRODUITS */
+.product-categories {
+  padding: 100px 0;
+  background-color: var(--color-white);
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.category-card {
+  background-color: var(--color-white);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 25px;
+  border: 1px solid var(--color-border);
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.category-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.category-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 8px;
+  color: var(--color-text-dark);
+}
+
+.category-card span {
+  font-size: 1em;
+  color: var(--color-primary);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* SECTION : NOS ENGAGEMENTS */
+.our-commitments {
+  padding: 100px 0;
+  background-color: var(--color-secondary-bg);
+}
+
+.commitments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  text-align: center;
+}
+
+.commitment-item {
+  background-color: var(--color-white);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid var(--color-border);
+}
+
+.commitment-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.commitment-item .icon-placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: var(
+    --color-accent
+  ); /* Logos d'engagement avec le nouvel accent vert */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border: 3px solid var(--color-accent);
+  border-radius: 50%;
+  background-color: var(--color-white);
+}
+
+.commitment-item h3 {
+  font-size: 1.7em;
+  margin-bottom: 15px;
+}
+
+.commitment-item p {
+  font-size: 1.05em;
+  line-height: 1.8;
+}
+
+/* SECTION : PIED DE PAGE (FOOTER) */
+.main-footer {
+  background-color: var(--color-text-dark);
+  color: var(--color-white);
+  padding: 60px 0 30px;
+}
+
+.main-footer h4 {
+  color: var(--color-white);
+  font-size: 1.3em;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+  font-size: 0.95em;
+}
+
+.footer-col ul li a:hover {
+  color: var(
+    --color-accent
+  ); /* Liens du footer au survol avec le nouvel accent vert */
+  opacity: 1;
+}
+
+.social-icons a {
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  margin-right: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(
+    --color-accent
+  ); /* Icônes sociales au survol avec le nouvel accent vert */
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.newsletter-form input {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 12px 18px;
+  border-radius: 5px;
+  color: var(--color-white);
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.newsletter-form input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.newsletter-form button {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 12px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.95em;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: var(
+    --color-accent
+  ); /* Bouton newsletter au survol avec le nouvel accent vert */
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85em;
+  opacity: 0.6;
+  margin-top: 20px;
+}
+
+/* Media Queries pour le Responsive Design (Adaptation mobile) */
+@media (max-width: 992px) {
+  .main-nav ul {
+    margin-left: 0;
+  }
+  .main-nav ul li {
+    margin-left: 20px;
+  }
+  .hero-section h1 {
+    font-size: 3.2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo {
+    margin-bottom: 15px;
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .main-nav {
+    order: 3;
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    display: none;
+    width: 100%;
+  }
+
+  .main-nav ul.active {
+    display: flex;
+  }
+
+  .main-nav ul li {
+    margin: 10px 0;
+  }
+
+  .header-actions {
+    order: 2;
+    margin-left: auto;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .btn.btn-secondary,
+  .btn.btn-primary {
+    padding: 10px 18px;
+    font-size: 0.85em;
+    margin-left: 10px;
+  }
+
+  .search-btn {
+    margin-left: 10px;
+  }
+
+  .burger-menu {
+    display: block;
+    margin-left: 20px;
+    order: 1;
+  }
+  .header-actions {
+    order: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .hero-section {
+    padding: 80px 20px;
+    min-height: 400px;
+  }
+  .hero-section h1 {
+    font-size: 2.8em;
+  }
+  .hero-section p {
+    font-size: 1.2em;
+  }
+
+  h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+  }
+  h2::after {
+    width: 60px;
+  }
+
+  .steps-grid,
+  .categories-grid,
+  .commitments-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .step-item,
+  .category-card,
+  .commitment-item {
+    padding: 30px;
+  }
+
+  .icon-placeholder,
+  .commitment-item .icon-placeholder {
+    width: 70px;
+    height: 70px;
+    font-size: 1.5em;
+  }
+
+  .category-card img {
+    height: 180px;
+  }
+
+  .footer-grid {
+    gap: 20px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section h1 {
+    font-size: 2.2em;
+  }
+  .hero-section p {
+    font-size: 1em;
+  }
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+  .header-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-btn {
+    margin: 10px 0;
+    width: 100%;
+  }
+  .burger-menu {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+/* --- SECTION : Nouveaux Styles pour la page "Comment ça marche" --- */
+
+/* Style pour le lien de navigation actif */
+.main-nav ul li a.active {
+  color: var(
+    --color-primary
+  ); /* Garde la couleur principale pour le lien actif */
+  font-weight: 700; /* Rend le texte plus gras */
+}
+
+.main-nav ul li a.active::after {
+  width: 100%; /* La barre du dessous est toujours visible */
+  background-color: var(--color-primary); /* Couleur principale pour la barre */
+}
+
+/* Hero Section pour les sous-pages */
+.hero-subpage {
+  background-color: var(
+    --color-secondary-bg
+  ); /* Fond avec la couleur secondaire légère */
+  color: var(--color-text-dark); /* Texte foncé pour contraste */
+  text-align: center;
+  padding: 80px 25px; /* Moins de padding que la section hero principale */
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-subpage .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-subpage h1 {
+  font-size: 3em; /* Plus petit que le H1 de la page d'accueil */
+  margin-bottom: 20px;
+  color: var(--color-text-dark);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.hero-subpage p {
+  font-size: 1.2em;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Espacement général des sections */
+.section-spacing {
+  padding: 100px 0; /* Espacement standard pour toutes les sections de contenu */
+}
+
+/* Ajustements pour les étapes détaillées (si tu veux un style différent ici) */
+.step-item.detailed {
+  text-align: left; /* Alignement du texte à gauche pour plus de lecture */
+  display: flex;
+  flex-direction: column; /* Organise l'icône et le texte verticalement */
+  align-items: flex-start; /* Alignement à gauche */
+}
+
+.step-item.detailed .icon-placeholder {
+  align-self: center; /* Centre l'icône */
+  margin-bottom: 25px;
+}
+
+.step-item.detailed h3 {
+  text-align: left;
+  margin-bottom: 10px;
+  color: var(--color-primary); /* Titres des étapes en vert canard */
+  font-size: 1.8em; /* Un peu plus grand */
+}
+
+.step-item.detailed p {
+  font-size: 1.1em;
+  line-height: 1.7;
+}
+
+/* Section "Nos Principes Fondamentaux" */
+.our-values {
+  background-color: var(--color-secondary-bg); /* Utilise le vert d'eau léger */
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.value-item {
+  background-color: var(--color-white);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid var(--color-border);
+  text-align: center; /* Centre le texte des valeurs */
+}
+
+.value-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.value-item h3 {
+  font-size: 1.7em;
+  margin-bottom: 15px;
+  color: var(--color-primary); /* Titres des valeurs en vert canard */
+}
+
+.value-item p {
+  font-size: 1.05em;
+  line-height: 1.8;
+}
+
+/* Section Call To Action (CTA) */
+.call-to-action {
+  background-color: var(--color-white);
+}
+
+.call-to-action .cta-subtitle {
+  font-size: 1.3em;
+  margin-bottom: 40px;
+  color: var(--color-text-dark);
+}
+
+/* Media Queries spécifiques à cette page (si besoin, sinon celles générales suffisent) */
+@media (max-width: 768px) {
+  .hero-subpage {
+    padding: 60px 20px;
+    min-height: 200px;
+  }
+  .hero-subpage h1 {
+    font-size: 2.2em;
+  }
+  .hero-subpage p {
+    font-size: 1em;
+  }
+  .section-spacing {
+    padding: 60px 0;
+  }
+  .step-item.detailed {
+    text-align: center; /* Revient au centrage sur mobile */
+    align-items: center;
+  }
+}
+/* --- SECTION : Nouveaux Styles pour la page "Nos Tests" --- */
+
+/* Style pour le lien de navigation actif (déjà défini, mais pour rappel) */
+.main-nav ul li a.active {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.main-nav ul li a.active::after {
+  width: 100%;
+  background-color: var(--color-primary);
+}
+
+/* Les styles pour .hero-subpage et .section-spacing sont déjà dans le CSS de 'Comment ça marche' */
+
+/* Catégories de produits testés (similaire à la page d'accueil, mais avec des détails pour cette page) */
+.tested-categories .categories-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px; /* Un peu moins d'espace pour plus de cartes */
+}
+
+.tested-categories .category-card span {
+  font-size: 0.95em; /* Légèrement plus petit pour les sous-catégories */
+  color: var(--color-text-light); /* Texte plus discret */
+  font-weight: 400;
+}
+
+/* Section "Nos Derniers Tests en Vedette" */
+.featured-tests .featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-bottom: 60px; /* Espace avant le bouton "Voir tous les tests" */
+}
+
+.test-card {
+  background-color: var(--color-white);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.test-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.test-card img {
+  width: 100%;
+  height: 220px; /* Hauteur fixe pour les images de test */
+  object-fit: cover;
+}
+
+.test-card h3 {
+  font-size: 1.4em;
+  color: var(--color-text-dark);
+  margin: 25px 25px 10px;
+  line-height: 1.3;
+}
+
+.test-card p {
+  font-size: 0.95em;
+  color: var(--color-text-light);
+  margin: 0 25px 20px;
+  flex-grow: 1; /* Pour que le bouton soit toujours en bas */
+}
+
+.test-card .btn {
+  align-self: flex-start; /* Aligne le bouton à gauche dans la carte */
+  margin: 0 25px 25px; /* Marge autour du bouton */
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Section "Pourquoi Faire Confiance à Cosmetest ?" */
+.why-cosmetest .reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.reason-item {
+  background-color: var(--color-off-white);
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.reason-item:hover {
+  background-color: var(--color-white);
+}
+
+.reason-item .icon-placeholder.sm {
+  font-size: 2.2em; /* Taille de l'icône augmentée */
+  margin-bottom: 15px;
+  color: var(--color-primary); /* Couleur des icônes */
+  background: none; /* Pas de fond circulaire pour ces icônes */
+  border: none; /* Pas de bordure pour ces icônes */
+  display: block; /* S'assure que les icônes sont centrées */
+  width: auto;
+  height: auto;
+}
+
+.reason-item h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: var(--color-text-dark);
+}
+
+.reason-item p {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: var(--color-text-light);
+}
+
+/* Media Queries spécifiques à cette page */
+@media (max-width: 768px) {
+  .featured-tests .featured-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .test-card .btn {
+    align-self: center; /* Centre le bouton sur mobile */
+    width: calc(100% - 50px); /* Prend presque toute la largeur */
+  }
+  .why-cosmetest .reasons-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .test-card h3 {
+    font-size: 1.2em;
+  }
+}
+/* --- SECTION : Nouveaux Styles pour la page "À Propos" --- */
+
+/* Style pour le lien de navigation actif (déjà défini) */
+.main-nav ul li a.active {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.main-nav ul li a.active::after {
+  width: 100%;
+  background-color: var(--color-primary);
+}
+
+/* Les styles pour .hero-subpage et .section-spacing sont déjà définis */
+
+/* Section "Notre Histoire" - Mise en page en deux colonnes */
+.content-two-columns {
+  display: flex;
+  align-items: center;
+  gap: 60px; /* Plus d'espace entre les colonnes */
+}
+
+.content-two-columns .column-text {
+  flex: 1; /* Prend l'espace disponible */
+}
+
+.content-two-columns .column-text h2 {
+  text-align: left; /* Alignement à gauche pour cette section */
+  margin-bottom: 25px;
+  font-size: 2.2em; /* Taille ajustée */
+}
+
+.content-two-columns .column-text h2::after {
+  margin: 15px 0 0 0; /* Ligne sous le titre alignée à gauche */
+}
+
+.content-two-columns .column-text p {
+  margin-bottom: 15px;
+  font-size: 1.05em;
+  line-height: 1.8;
+}
+
+.content-two-columns .column-image {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Centre l'image */
+}
+
+.content-two-columns .column-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Ombre plus marquée pour l'image */
+}
+
+/* Section "Mission et Vision" */
+.mission-vision {
+  text-align: center;
+}
+
+.mv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.mv-item {
+  background-color: var(--color-white);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--color-border);
+  transition: transform 0.3s ease;
+}
+
+.mv-item:hover {
+  transform: translateY(-5px);
+}
+
+.mv-item h3 {
+  font-size: 1.8em;
+  color: var(--color-primary); /* Titres en vert canard */
+  margin-bottom: 20px;
+}
+
+.mv-item p {
+  font-size: 1.1em;
+  line-height: 1.7;
+}
+
+/* Section "Nos Valeurs Fondamentales" (distincte de celle de "Nos Tests") */
+.our-values-about .values-grid-about {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.value-item-about {
+  background-color: var(
+    --color-off-white
+  ); /* Fond plus doux pour les valeurs ici */
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.value-item-about:hover {
+  background-color: var(--color-white);
+  transform: translateY(-5px);
+}
+
+.value-item-about .icon-placeholder.sm {
+  font-size: 2.2em;
+  margin-bottom: 15px;
+  color: var(--color-primary); /* Couleurs des icônes en vert canard */
+  background: none;
+  border: none;
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+.value-item-about h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: var(--color-text-dark);
+}
+
+.value-item-about p {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: var(--color-text-light);
+}
+
+/* Call To Action spécifique à la page "À Propos" */
+.cta-about .cta-subtitle {
+  font-size: 1.3em;
+  margin-bottom: 40px;
+  color: var(--color-text-dark);
+}
+
+/* Media Queries spécifiques pour cette page */
+@media (max-width: 992px) {
+  .content-two-columns {
+    flex-direction: column; /* Colonnes en pile sur les écrans plus petits */
+    gap: 40px;
+  }
+  .content-two-columns .column-text h2 {
+    text-align: center; /* Centre le titre */
+  }
+  .content-two-columns .column-text h2::after {
+    margin: 15px auto 0; /* Centre la ligne sous le titre */
+  }
+}
+
+@media (max-width: 768px) {
+  .mv-grid,
+  .values-grid-about {
+    grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    gap: 30px;
+  }
+  .mv-item {
+    padding: 30px;
+  }
+  .value-item-about {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-subpage h1 {
+    font-size: 2em;
+  }
+}
+/* --- SECTION : Nouveaux Styles pour la page "Contact" --- */
+
+/* Style pour le lien de navigation actif (déjà défini) */
+.main-nav ul li a.active {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.main-nav ul li a.active::after {
+  width: 100%;
+  background-color: var(--color-primary);
+}
+
+/* Les styles pour .hero-subpage et .section-spacing sont déjà définis */
+/* La classe .content-two-columns est également déjà définie et sera réutilisée */
+
+.contact-form-section .column-text h2,
+.contact-form-section .column-info h2 {
+  text-align: left; /* Alignement à gauche pour les titres dans les colonnes */
+  margin-bottom: 25px;
+  font-size: 2em;
+  color: var(--color-text-dark);
+}
+
+.contact-form-section .column-text h2::after {
+  margin: 15px 0 0 0; /* Ligne sous le titre alignée à gauche */
+}
+
+/* Styles du Formulaire de Contact */
+.contact-form {
+  background-color: var(--color-white);
+  padding: 35px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--color-border);
+  margin-top: 30px; /* Espace au-dessus du formulaire */
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  font-size: 0.95em;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: calc(100% - 24px); /* Pour compenser le padding */
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  color: var(--color-text-dark);
+  background-color: var(--color-off-white);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(20, 81, 80, 0.2); /* Ombre de focus en vert canard */
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical; /* Permet de redimensionner verticalement */
+}
+
+.contact-form button.btn-primary {
+  width: auto; /* Bouton non étiré */
+  padding: 12px 25px;
+  font-size: 1em;
+}
+
+/* Styles des Informations de Contact */
+.column-info {
+  padding-left: 40px; /* Marge à gauche pour séparer du formulaire */
+}
+
+.contact-info-item {
+  margin-bottom: 30px;
+}
+
+.contact-info-item h3 {
+  font-size: 1.4em;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.contact-info-item p {
+  font-size: 1.05em;
+  line-height: 1.6;
+  color: var(--color-text-light);
+}
+
+.contact-info-item a {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.contact-info-item a:hover {
+  color: var(--color-accent);
+}
+
+/* Style pour la carte Google Maps */
+.map-container {
+  margin-top: 40px;
+  border-radius: 10px;
+  overflow: hidden; /* Pour que les bords de l'iframe soient arrondis */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--color-border);
+}
+
+.map-container iframe {
+  display: block; /* Supprime l'espace sous l'iframe */
+}
+
+/* Section FAQ Promo */
+.faq-promo .cta-subtitle {
+  font-size: 1.3em;
+  margin-bottom: 40px;
+  color: var(--color-text-dark);
+}
+
+/* Media Queries spécifiques à cette page */
+@media (max-width: 992px) {
+  .contact-form-section .content-two-columns {
+    flex-direction: column; /* Les colonnes s'empilent sur les petits écrans */
+    gap: 50px;
+  }
+  .column-info {
+    padding-left: 0; /* Supprime le padding gauche sur mobile */
+    text-align: center; /* Centre les infos de contact */
+  }
+  .contact-form-section .column-text h2,
+  .contact-form-section .column-info h2 {
+    text-align: center; /* Centre les titres des colonnes sur mobile */
+  }
+  .contact-form-section .column-text h2::after {
+    margin: 15px auto 0; /* Centre la ligne sous le titre */
+  }
+  .contact-form button.btn-primary {
+    width: 100%; /* Bouton du formulaire prend toute la largeur sur mobile */
+  }
+  .map-container {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form {
+    padding: 25px;
+  }
+  .contact-form label,
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9em;
+  }
+  .contact-info-item h3 {
+    font-size: 1.2em;
+  }
+  .contact-info-item p {
+    font-size: 0.95em;
+  }
+}
+/* --- SECTION : Nouveaux Styles pour la page "Inscription" --- */
+
+/* Style pour le lien de navigation actif (bouton "Inscription" dans header-actions) */
+.header-actions .btn.active {
+  background-color: var(
+    --color-accent
+  ); /* Utilise la couleur accent pour le bouton actif */
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Les styles pour .hero-subpage et .section-spacing sont déjà définis */
+
+.registration-form-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.registration-form-section h2::after {
+  margin: 20px auto 0;
+}
+
+.form-container {
+  max-width: 550px; /* Largeur max pour le formulaire */
+  margin: 0 auto; /* Centrage */
+  background-color: var(--color-white);
+  padding: 45px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Ombre plus prononcée */
+  border: 1px solid var(--color-border);
+}
+
+.registration-form .form-group {
+  margin-bottom: 25px;
+}
+
+.registration-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  font-size: 0.98em;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="email"],
+.registration-form input[type="password"] {
+  width: calc(100% - 24px); /* Pour compenser le padding */
+  padding: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  color: var(--color-text-dark);
+  background-color: var(--color-off-white);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.registration-form input[type="text"]:focus,
+.registration-form input[type="email"]:focus,
+.registration-form input[type="password"]:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(20, 81, 80, 0.25); /* Ombre de focus en vert canard */
+  outline: none;
+}
+
+/* Checkbox specific styling */
+.registration-form .checkbox-group {
+  display: flex;
+  align-items: flex-start; /* Align with the top of the checkbox */
+  margin-bottom: 30px;
+}
+
+.registration-form .checkbox-group input[type="checkbox"] {
+  margin-right: 12px;
+  min-width: 18px; /* Ensure checkbox is visible */
+  min-height: 18px;
+  border: 1px solid var(--color-border);
+  appearance: none; /* Hide default checkbox */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  border-radius: 4px;
+  position: relative;
+  top: 2px; /* Slight adjustment for vertical alignment */
+}
+
+.registration-form .checkbox-group input[type="checkbox"]:checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.registration-form .checkbox-group input[type="checkbox"]:checked::after {
+  content: "✔"; /* Checkmark for checked state */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-white);
+  font-size: 14px; /* Size of the checkmark */
+}
+
+.registration-form .checkbox-group label {
+  display: inline; /* Keep label next to checkbox */
+  font-weight: 400;
+  font-size: 0.9em;
+  color: var(--color-text-light);
+  margin-bottom: 0; /* Override default label margin */
+}
+
+.registration-form .checkbox-group label a {
+  font-weight: 500;
+  color: var(--color-primary); /* Links in checkbox text */
+}
+
+.registration-form .checkbox-group label a:hover {
+  color: var(--color-accent);
+}
+
+/* Style pour le bouton "Créer Mon Compte" */
+.registration-form .btn-block {
+  width: 100%; /* Le bouton prend toute la largeur */
+  padding: 16px;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+/* Lien "Déjà un compte ?" */
+.login-link {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1em;
+  color: var(--color-text-light);
+}
+
+.login-link a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.login-link a:hover {
+  color: var(--color-accent);
+}
+
+/* Media Queries spécifiques à cette page */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 30px;
+  }
+  .registration-form input[type="text"],
+  .registration-form input[type="email"],
+  .registration-form input[type="password"] {
+    padding: 12px;
+  }
+  .registration-form .checkbox-group {
+    flex-direction: column; /* Empile le checkbox et le label sur mobile */
+    align-items: center;
+    text-align: center;
+  }
+  .registration-form .checkbox-group input[type="checkbox"] {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .registration-form .checkbox-group label {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 20px;
+    box-shadow: none; /* Moins d'ombre sur très petits écrans */
+    border: none;
+  }
+  .registration-form input,
+  .registration-form button {
+    font-size: 0.95em;
+  }
+}
+/* --- SECTION : Nouveaux Styles pour la page "Connexion" --- */
+
+/* Style pour le lien de navigation actif (bouton "Connexion" dans header-actions) */
+.header-actions .btn.active {
+  /* Ces styles sont déjà définis pour '.btn.active' dans la section Inscription,
+       ils s'appliqueront aussi au bouton de connexion si tu lui ajoutes la classe 'active' */
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Les styles pour .hero-subpage, .section-spacing et .form-container sont déjà définis */
+/* Ils seront réutilisés ici pour la cohérence */
+
+.login-form-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.login-form-section h2::after {
+  margin: 20px auto 0;
+}
+
+.login-form .form-group {
+  margin-bottom: 25px;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  font-size: 0.98em;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  width: calc(100% - 24px); /* Pour compenser le padding */
+  padding: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  color: var(--color-text-dark);
+  background-color: var(--color-off-white);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-form input[type="email"]:focus,
+.login-form input[type="password"]:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(20, 81, 80, 0.25);
+  outline: none;
+}
+
+.login-form .form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap; /* Permet le retour à la ligne sur mobile */
+}
+
+/* Checkbox "Se souvenir de moi" (réutilise les styles de la page inscription) */
+.login-form .checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.login-form .checkbox-group input[type="checkbox"] {
+  margin-right: 10px;
+  min-width: 18px; /* Ensure checkbox is visible */
+  min-height: 18px;
+  border: 1px solid var(--color-border);
+  appearance: none; /* Hide default checkbox */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  border-radius: 4px;
+  position: relative;
+  top: 2px;
+}
+
+.login-form .checkbox-group input[type="checkbox"]:checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.login-form .checkbox-group input[type="checkbox"]:checked::after {
+  content: "✔";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-white);
+  font-size: 14px;
+}
+
+.login-form .checkbox-group label {
+  display: inline;
+  font-weight: 400;
+  font-size: 0.9em;
+  color: var(--color-text-light);
+  margin-bottom: 0;
+}
+
+/* Lien "Mot de passe oublié ?" */
+.login-form .forgot-password {
+  font-size: 0.9em;
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-left: auto; /* Aligne à droite si espace disponible */
+}
+
+.login-form .forgot-password:hover {
+  color: var(--color-accent);
+}
+
+/* Style pour le bouton "Se Connecter" */
+.login-form .btn-block {
+  width: 100%; /* Le bouton prend toute la largeur */
+  padding: 16px;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+/* Lien "Pas encore de compte ?" */
+.signup-link {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1em;
+  color: var(--color-text-light);
+}
+
+.signup-link a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.signup-link a:hover {
+  color: var(--color-accent);
+}
+
+/* Media Queries spécifiques à cette page */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 30px;
+  }
+  .login-form input[type="email"],
+  .login-form input[type="password"] {
+    padding: 12px;
+  }
+  .login-form .form-options {
+    flex-direction: column; /* Empile les options sur mobile */
+    align-items: flex-start; /* Aligne à gauche */
+    gap: 15px; /* Espace entre les éléments empilés */
+  }
+  .login-form .forgot-password {
+    margin-left: 0; /* Supprime le margin-left auto sur mobile */
+  }
+  .login-form .btn-block {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 20px;
+    box-shadow: none; /* Moins d'ombre sur très petits écrans */
+    border: none;
+  }
+  .login-form input,
+  .login-form button {
+    font-size: 0.95em;
+  }
+  .login-form .checkbox-group label,
+  .login-form .forgot-password,
+  .signup-link {
+    font-size: 0.85em;
+  }
+}
